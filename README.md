@@ -85,8 +85,8 @@ streamlit run app.py
 *   *"Synthesize paracetamol from 4-aminophenol and acetic anhydride."*
 *   *"Find a path to make Benzocaine using p-aminobenzoic acid and ethanol."*
 *   *"How can I synthesize aspirin from salicylic acid and acetic anhydride?"*
-
-![The results of an example query](example_output.png)
+*   
+![The results of an example query](https://github.com/richardschattner/Chemical-Synthesis-Agent/blob/main/example_output.png?raw=true)
 
 ## Project Structure
 
@@ -102,4 +102,7 @@ streamlit run app.py
 This project is open-source and available under the [MIT License](LICENSE).
 
 ---
-*Note: This system relies on the quality and coverage of the data loaded into Neo4j. If a reaction path exists in chemical literature but is not in the ORD subset loaded, the agent will not find it.*
+*Note: 
+- This system relies on the quality and coverage of the data loaded into Neo4j. If a reaction path exists in chemical literature but is not in the ORD subset loaded, the agent will not find it.
+- If a target molecule cannot be synthesized using only the named starting materials, the system will not find a reaction path. Solvents, Catalysts and intermediate products do not have to be specified.
+*
