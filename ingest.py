@@ -137,15 +137,12 @@ def ingest_batch(tx, batch):
         r.yield_percent = data.yield_percent,
         r.procedure = data.procedure
     
-    WITH r, data
-    CALL {
-        WITH r, data
+    CALL (r, data) {
         UNWIND data.reactants AS rsmi
         MERGE (m1:Molecule {smiles: rsmi})
         MERGE (m1)-[:REACTANT_IN]->(r)
     }
-    CALL {
-        WITH r, data
+    CALL (r, data) {
         UNWIND data.products AS psmi
         MERGE (m2:Molecule {smiles: psmi})
         MERGE (r)-[:PRODUCES]->(m2)
