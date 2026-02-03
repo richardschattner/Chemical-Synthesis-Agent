@@ -85,8 +85,8 @@ streamlit run app.py
 *   *"Synthesize paracetamol from 4-aminophenol and acetic anhydride."*
 *   *"Find a path to make Benzocaine using p-aminobenzoic acid and ethanol."*
 *   *"How can I synthesize aspirin from salicylic acid and acetic anhydride?"*
-*   
-![The results of an example query](https://github.com/richardschattner/Chemical-Synthesis-Agent/blob/main/example_output.png?raw=true)
+  
+![The results of an example query](/example_output.png)
 
 ## Project Structure
 
