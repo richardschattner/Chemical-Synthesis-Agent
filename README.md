@@ -26,19 +26,19 @@ The **Chemical Synthesis Agent** is designed to solve the retrosynthesis problem
 
 ## 🛠️ Tech Stack
 
-*   **Orchestration**: [LangChain](https://www.langchain.com/) (LCEL)
-*   **Database**: [Neo4j](https://neo4j.com/) (Graph Database)
+*   **Orchestration**: [LangChain]
+*   **Database**: [Neo4j] (Graph Database)
 *   **LLM**: OpenAI GPT-4o-mini
-*   **Cheminformatics**: [RDKit](https://www.rdkit.org/)
-*   **Frontend**: [Streamlit](https://streamlit.io/)
-*   **APIs**: OPSIN, PubChem (PUG REST)
+*   **Cheminformatics**: [RDKit]
+*   **Frontend**: [Streamlit]
+*   **APIs**: OPSIN, PubChem (For converting names of chemicals into SMILES codes)
 
 ## 📦 Installation
 
 ### Prerequisites
 *   Python 3.10+
 *   Neo4j Database (Local Desktop or AuraDB)
-*   OpenAI API Key
+*   OpenAI API Key (or any other LLM API provider)
 
 ### Setup
 
@@ -64,12 +64,15 @@ The **Chemical Synthesis Agent** is designed to solve the retrosynthesis problem
 
 ### Data Ingestion
 
-1.  Download the **Open Reaction Database (ORD)** data files (JSONL format) and place them in the `data/` directory.
-2.  Run the ingestion script to populate your Neo4j database:
+1.  Download the **Open Reaction Database (ORD)** data files (pb.gz format)
+2.  Convert the files into JSONL Format using the conversion script
     ```bash
     python ingest.py
     ```
-    *Note: The script uses batch processing (`UNWIND`) to efficiently handle millions of nodes.*
+4.  Run the ingestion script to populate your Neo4j database:
+    ```bash
+    python ingest.py
+    ```
 
 ## 🖥️ Usage
 
@@ -81,7 +84,6 @@ streamlit run app.py
 ### Example Queries
 *   *"Synthesize paracetamol from 4-aminophenol and acetic anhydride."*
 *   *"Find a path to make Benzocaine using p-aminobenzoic acid and ethanol."*
-*   *"How do I make Aspirin?"* (The system will infer common starting materials if not specified, though explicit inputs improve precision).
 
 ## 📂 Project Structure
 
