@@ -69,7 +69,14 @@ The **Chemical Synthesis Agent** is designed to solve the retrosynthesis problem
     ```bash
     python convert.py
     ```
-3.  Enforce uniqueness constraints for Molecules and Reactions in Neo4j to avoid duplicates.
+3.  Enforce uniqueness constraints for Molecules and Reactions in Neo4j to avoid duplicates by pasting the following into the Neo4j Console:
+    ```bash
+    CREATE CONSTRAINT molecule_smiles IF NOT EXISTS
+    FOR (m:Molecule) REQUIRE m.smiles IS UNIQUE;
+   
+    CREATE CONSTRAINT reaction_id IF NOT EXISTS
+    FOR (r:Reaction) REQUIRE r.reaction_id IS UNIQUE;
+    ```
 4.  Run the ingestion script to populate your Neo4j database:
     ```bash
     python ingest.py
