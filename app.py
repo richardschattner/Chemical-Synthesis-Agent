@@ -135,7 +135,7 @@ def generate_graph(reactions, target=None, starting_materials=None):
         return f"Error generating graph: {e}"
 
 # Layout: Split screen
-col1, col2 = st.columns([1, 1.2])
+col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("Assistant Chat")
@@ -221,5 +221,7 @@ with col2:
         st.warning("""⚠️ **Note:** Synthesis paths of the target molecule are found based on the provided starting components.
             If the starting components are not sufficient to synthesize the target, the search will fail. 
             Solvents and catalysts are inferred from the database and do not need to be mentioned explicitly in your query.""")
-        st.markdown("""**Try queries like:**
-        - *How can I synthesize aspirin from salicylic acid and acetic anhydride?*""")
+        st.markdown("""**Try queries like:** \n
+        - *How can I synthesize aspirin from salicylic acid and acetic anhydride?*\n
+        - *Synthesize paracetamol from 4-aminophenol and acetic anhydride.*\n
+        - *Find a path to make Benzocaine using p-aminobenzoic acid and ethanol.*""")
