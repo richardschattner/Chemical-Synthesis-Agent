@@ -67,7 +67,7 @@ The **Chemical Synthesis Agent** is designed to solve the retrosynthesis problem
 1.  Download the **Open Reaction Database (ORD)** data files (pb.gz format)
 2.  Convert the files into JSONL Format using the conversion script
     ```bash
-    python ingest.py
+    python convert.py
     ```
 4.  Run the ingestion script to populate your Neo4j database:
     ```bash
@@ -84,6 +84,9 @@ streamlit run app.py
 ### Example Queries
 *   *"Synthesize paracetamol from 4-aminophenol and acetic anhydride."*
 *   *"Find a path to make Benzocaine using p-aminobenzoic acid and ethanol."*
+*   *"How can I synthesize aspirin from salicylic acid and acetic anhydride?"*
+
+![The results of an example query](example_output.png)
 
 ## Project Structure
 
