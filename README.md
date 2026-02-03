@@ -69,6 +69,7 @@ The **Chemical Synthesis Agent** is designed to solve the retrosynthesis problem
     ```bash
     python convert.py
     ```
+3.  Enforce uniqueness constraints for Molecules and Reactions in Neo4j to avoid duplicates.
 4.  Run the ingestion script to populate your Neo4j database:
     ```bash
     python ingest.py
@@ -104,5 +105,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 ---
 *Note: 
 - This system relies on the quality and coverage of the data loaded into Neo4j. If a reaction path exists in chemical literature but is not in the ORD subset loaded, the agent will not find it.
-- If a target molecule cannot be synthesized using only the named starting materials, the system will not find a reaction path. Solvents, Catalysts and intermediate products do not have to be specified.
-*
+- If a target molecule cannot be synthesized using only the named starting materials, the system will not find a reaction path. Solvents, Catalysts and intermediate products do not have to be specified.*
