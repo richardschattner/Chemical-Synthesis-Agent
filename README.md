@@ -67,7 +67,15 @@ The **Chemical Synthesis Agent** is designed to solve the retrosynthesis problem
 1.  Download the **Open Reaction Database (ORD)** data files (pb.gz format)
 2.  Convert the files into JSONL Format using the conversion script
     ```bash
-    python ingest.py
+    python convert.py
+    ```
+3.  Enforce uniqueness constraints for Molecules and Reactions in Neo4j to avoid duplicates by pasting the following into the Neo4j Console:
+    ```bash
+    CREATE CONSTRAINT molecule_smiles IF NOT EXISTS
+    FOR (m:Molecule) REQUIRE m.smiles IS UNIQUE;
+   
+    CREATE CONSTRAINT reaction_id IF NOT EXISTS
+    FOR (r:Reaction) REQUIRE r.reaction_id IS UNIQUE;
     ```
 4.  Run the ingestion script to populate your Neo4j database:
     ```bash
@@ -84,6 +92,9 @@ streamlit run app.py
 ### Example Queries
 *   *"Synthesize paracetamol from 4-aminophenol and acetic anhydride."*
 *   *"Find a path to make Benzocaine using p-aminobenzoic acid and ethanol."*
+*   *"How can I synthesize aspirin from salicylic acid and acetic anhydride?"*
+  
+![The results of an example query](/example_output.png)
 
 ## Project Structure
 
@@ -99,4 +110,6 @@ streamlit run app.py
 This project is open-source and available under the [MIT License](LICENSE).
 
 ---
-*Note: This system relies on the quality and coverage of the data loaded into Neo4j. If a reaction path exists in chemical literature but is not in the ORD subset loaded, the agent will not find it.*
+*Note: 
+- This system relies on the quality and coverage of the data loaded into Neo4j. If a reaction path exists in chemical literature but is not in the ORD subset loaded, the agent will not find it.
+- If a target molecule cannot be synthesized using only the named starting materials, the system will not find a reaction path. Solvents, Catalysts and intermediate products do not have to be specified.*
