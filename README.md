@@ -3,7 +3,12 @@
 An intelligent expert system for planning chemical synthesis pathways. This tool resolves natural language queries into chemical structures, searches a knowledge graph for valid reaction pathways, and generates step-by-step procedural guides using an LLM.
 For an explanation of the architecture, algorithm and agent. Watch the video below
 
-[![Watch on YouTube](https://img.youtube.com/vi/dGVC0PSJO2A/hqdefault.jpg)](https://www.youtube.com/watch?v=dGVC0PSJO2A)
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=dGVC0PSJO2A">
+    <img src="https://img.youtube.com/vi/dGVC0PSJO2A/maxresdefault.jpg" width="600">
+  </a>
+</p>
+
 
 ## Overview
 
