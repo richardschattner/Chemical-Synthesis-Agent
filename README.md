@@ -120,4 +120,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 ---
 *Note: 
 - This system relies on the quality and coverage of the data loaded into Neo4j. If a reaction path exists in chemical literature but is not in the ORD subset loaded, the agent will not find it.
-- If a target molecule cannot be synthesized using only the named starting materials, the system will not find a reaction path. Solvents, Catalysts and intermediate products do not have to be specified.*
+- If a target molecule cannot be synthesized using only the named starting materials, the system will not find a reaction path. Solvents, Catalysts and intermediate products do not have to be specified.
